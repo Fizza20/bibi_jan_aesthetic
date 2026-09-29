@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-teal: #1599a8;
+  --primary-teal-dark: #0e6e7a;
+  --primary-teal-light: #e8f7f9;
+  --surface-porcelain: #fbfdfd;
+  --surface-ice: #f0f7f8;
+  --clinical-onyx: #0c1618;
+  --clinical-slate: #3b4e52;
+}
+
+@layer base {
+  * {
+    border-color: #e5eff1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #fbfdfd;
+    color: #111b1d;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Lenis smooth scrolling recommendations */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+/* Subtle background grain for tactile luxury feel */
+.bg-grain {
+  background-image: radial-gradient(rgba(21, 153, 168, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Fine hairline borders */
+.border-hairline {
+  border-width: 1px;
+  border-color: rgba(21, 153, 168, 0.14);
+}
+
+.border-hairline-dark {
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Glassmorphism restrained & refined */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(21, 153, 168, 0.12);
+}
+
+.glass-panel-dark {
+  background: rgba(11, 21, 23, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Shimmer animation for delicate accents */
+@keyframes delicateShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(21, 153, 168, 0) 0%, rgba(21, 153, 168, 0.15) 50%, rgba(21, 153, 168, 0) 100%);
+  background-size: 200% 100%;
+  animation: delicateShimmer 3s infinite linear;
+}
+
+/* Selection */
+::selection {
+  background-color: #1599a8;
+  color: #ffffff;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f7f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #91d1db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1599a8;
+}
+
+/* Accessibility focus styles */
+:focus-visible {
+  outline: 2px solid #1599a8;
+  outline-offset: 3px;
+}
