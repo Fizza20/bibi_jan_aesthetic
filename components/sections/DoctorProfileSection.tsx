@@ -24,7 +24,7 @@ export default function DoctorProfileSection() {
         </div>
 
         {/* Doctor Card Profile */}
-        <div className="bg-white rounded-3xl border border-clinical-border shadow-premium overflow-hidden">
+        <div className="bg-white rounded-2xl border border-clinical-border shadow-premium overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
             
             {/* Doctor Portrait Image */}
@@ -70,9 +70,9 @@ export default function DoctorProfileSection() {
 
                 {/* Areas of Focus / Expertise */}
                 <div className="mt-8 pt-6 border-t border-clinical-border">
-                  <h4 className="text-xs uppercase tracking-widest font-semibold text-clinical-dark mb-3">
+                  <h3 className="text-xs uppercase tracking-wider font-semibold text-clinical-dark mb-3">
                     Areas of Clinical Focus
-                  </h4>
+                  </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {doctor.specialties.map((spec, sIdx) => (
                       <div key={sIdx} className="flex items-center gap-2 text-xs text-clinical-charcoal">
@@ -83,16 +83,16 @@ export default function DoctorProfileSection() {
                   </div>
                 </div>
 
-                {/* Qualifications & Licensure Placeholders */}
+                {/* Qualifications & Credentials */}
                 <div className="mt-6 pt-6 border-t border-clinical-border">
-                  <h4 className="text-xs uppercase tracking-widest font-semibold text-clinical-muted mb-2">
+                  <h3 className="text-xs uppercase tracking-wider font-semibold text-clinical-slate mb-2">
                     Professional Standing & Certifications
-                  </h4>
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {doctor.credentialsPlaceholder.map((cred, cIdx) => (
                       <span
                         key={cIdx}
-                        className="px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-clinical-slate text-[11px]"
+                        className="px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-clinical-slate text-xs"
                       >
                         {cred}
                       </span>
@@ -105,7 +105,7 @@ export default function DoctorProfileSection() {
               <div className="mt-10 pt-6 border-t border-clinical-border flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
                   href="/book-appointment"
-                  className="px-7 py-3.5 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-md"
+                  className="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md hover:shadow-brand-500/20 active:scale-95"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Request Consultation with Specialist</span>

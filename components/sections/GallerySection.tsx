@@ -71,7 +71,7 @@ export default function GallerySection() {
               <div className="absolute inset-0 bg-gradient-to-t from-clinical-dark/80 via-clinical-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white" />
               
               <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 text-white z-10">
-                <span className="text-[10px] uppercase tracking-widest text-brand-300 font-semibold block mb-1">
+                <span className="text-xs uppercase tracking-widest text-brand-300 font-semibold block mb-1">
                   {item.category}
                 </span>
                 <h3 className="font-serif text-lg font-medium leading-snug">
@@ -99,7 +99,7 @@ export default function GallerySection() {
           onClick={() => setActiveLightboxItem(null)}
         >
           <div
-            className="relative max-w-4xl w-full bg-clinical-dark rounded-3xl overflow-hidden border border-white/20 shadow-2xl"
+            className="relative max-w-4xl w-full bg-clinical-dark rounded-2xl overflow-hidden border border-white/20 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button

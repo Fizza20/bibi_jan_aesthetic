@@ -33,9 +33,9 @@ export default function ContactSection() {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-clinical-muted">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-clinical-slate">
                   Clinic Location
-                </h4>
+                </h3>
                 <p className="text-sm font-medium text-clinical-dark mt-1">
                   {contact.address}
                 </p>
@@ -51,9 +51,9 @@ export default function ContactSection() {
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-clinical-muted">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-clinical-slate">
                   Telephone Concierge
-                </h4>
+                </h3>
                 <p className="text-sm font-medium text-clinical-dark mt-1">
                   {contact.phone}
                 </p>
@@ -69,9 +69,9 @@ export default function ContactSection() {
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-clinical-muted">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-clinical-slate">
                   WhatsApp Direct
-                </h4>
+                </h3>
                 <p className="text-sm font-medium text-clinical-dark mt-1">
                   {contact.whatsapp}
                 </p>
@@ -92,9 +92,9 @@ export default function ContactSection() {
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-clinical-muted">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-clinical-slate">
                   Electronic Mail
-                </h4>
+                </h3>
                 <p className="text-sm font-medium text-clinical-dark mt-1">
                   {contact.email}
                 </p>
@@ -106,10 +106,10 @@ export default function ContactSection() {
 
           </div>
 
-          {/* Right Column: Architectural Map Placeholder & Opening Hours */}
+          {/* Right Column: Architectural Map & Opening Hours */}
           <div className="lg:col-span-7 flex flex-col justify-between">
-            {/* Elegant Map Placeholder */}
-            <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-clinical-border shadow-premium h-80 sm:h-96 flex items-center justify-center p-8 text-center text-white">
+            {/* Elegant Map Card */}
+            <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-clinical-border shadow-premium h-80 sm:h-96 flex items-center justify-center p-8 text-center text-white">
               {/* Map background stylistic texture */}
               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#1599a8_1px,transparent_1px)] [background-size:16px_16px]" />
               
@@ -120,11 +120,11 @@ export default function ContactSection() {
                 <h3 className="font-serif text-lg font-medium">
                   {CLINIC_CONFIG.name}
                 </h3>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-300 mt-1">
                   {contact.address}, {contact.city}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs text-white border border-white/20">
-                  <span>Interactive Map Placeholder</span>
+                <div className="mt-5 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs text-brand-200 border border-white/20">
+                  <span>Private Consultation Sanctuary • Access Details via Concierge</span>
                 </div>
               </div>
             </div>
@@ -136,9 +136,9 @@ export default function ContactSection() {
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-wider font-semibold text-clinical-dark">
+                  <h3 className="text-xs uppercase tracking-wider font-semibold text-clinical-dark">
                     Schedule Your Appointment
-                  </h4>
+                  </h3>
                   <p className="text-xs text-clinical-slate">
                     Consultations are by appointment to ensure unhurried medical focus.
                   </p>

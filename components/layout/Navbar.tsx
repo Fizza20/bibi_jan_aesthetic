@@ -65,7 +65,7 @@ export default function Navbar() {
               <span className="font-sans font-bold text-base sm:text-lg tracking-wider text-clinical-dark uppercase leading-none">
                 BIBI JAN
               </span>
-              <span className="text-[10px] sm:text-xs tracking-[0.25em] text-brand-600 font-medium uppercase mt-0.5">
+              <span className="text-xs tracking-[0.2em] text-brand-600 font-medium uppercase mt-0.5">
                 AESTHETICS
               </span>
             </div>
@@ -99,8 +99,8 @@ export default function Navbar() {
           {/* Right Action / CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="tel:+10000000000"
-              className="text-xs uppercase tracking-wider text-clinical-muted hover:text-brand-600 transition-colors flex items-center gap-1.5"
+              href="tel:+18005552424"
+              className="text-xs font-medium text-clinical-slate hover:text-brand-600 transition-colors flex items-center gap-1.5"
             >
               <Phone className="w-3.5 h-3.5 text-brand-500" />
               <span>Direct Concierge</span>
@@ -109,7 +109,7 @@ export default function Navbar() {
             <MagneticButton strength={0.2}>
               <Link
                 href="/book-appointment"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-brand-500 hover:bg-brand-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-brand-500/20 active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-brand-500 hover:bg-brand-600 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-brand-500/20 active:scale-95"
               >
                 <Calendar className="w-3.5 h-3.5" />
                 <span>Book Appointment</span>

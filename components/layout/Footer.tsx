@@ -145,7 +145,7 @@ export default function Footer() {
         </div>
 
         {/* Small Bottom Disclaimer Text */}
-        <div className="mt-8 pt-6 border-t border-white/5 text-[11px] text-slate-500 leading-relaxed">
+        <div className="mt-8 pt-6 border-t border-white/5 text-xs text-slate-500 leading-relaxed">
           {CLINIC_CONFIG.disclaimer}
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function FeaturedTreatmentSection() {
           
           {/* Large Image Editorial Feature */}
           <div className="lg:col-span-7 relative">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1600&auto=format&fit=crop"
                 alt="Signature Pigmentation and Melasma Clinical Protocol"
@@ -38,16 +38,16 @@ export default function FeaturedTreatmentSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-clinical-dark/80 via-transparent to-transparent" />
               
               {/* Floating Clinical Metric Badge */}
-              <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-sm p-4 rounded-2xl bg-clinical-onyx/85 backdrop-blur-md border border-white/15">
+              <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-sm p-4 rounded-xl bg-clinical-onyx/85 backdrop-blur-md border border-white/15">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs uppercase tracking-wider font-semibold text-white">
+                    <h3 className="text-xs font-semibold text-white">
                       Cellular Melanin Regulation
-                    </h4>
-                    <p className="text-[11px] text-slate-300 mt-0.5">
+                    </h3>
+                    <p className="text-xs text-slate-300 mt-1">
                       Non-stripping enzymatic & light-based modulation
                     </p>
                   </div>

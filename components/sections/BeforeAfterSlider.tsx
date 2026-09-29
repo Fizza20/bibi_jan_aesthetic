@@ -93,7 +93,7 @@ export default function BeforeAfterSlider() {
                 sizes="(max-width: 1024px) 100vw, 896px"
                 className="object-cover"
               />
-              <div className="absolute top-4 right-4 bg-clinical-dark/75 backdrop-blur-md text-white text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full border border-white/20">
+              <div className="absolute top-4 right-4 bg-clinical-dark/75 backdrop-blur-md text-white text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full border border-white/20">
                 After Protocol
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function BeforeAfterSlider() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-clinical-dark text-[11px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full border border-clinical-border shadow-sm">
+              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-clinical-dark text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full border border-clinical-border shadow-sm">
                 Before Care
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function BeforeAfterSlider() {
 
           {/* Medical Disclaimer Note */}
           <div className="mt-4 text-center">
-            <p className="text-[11px] text-clinical-muted leading-relaxed">
+            <p className="text-xs text-clinical-muted leading-relaxed">
               * Note: Individual clinical results vary by skin anatomy, lifestyle, and adherence to protocol. Documented cases represent individual clinical responses and do not constitute a guarantee of identical results.
             </p>
           </div>

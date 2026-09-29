@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
           {TESTIMONIALS_DATA.map((t) => (
             <div
               key={t.id}
-              className="p-8 sm:p-10 rounded-3xl bg-white border border-clinical-border shadow-subtle hover:shadow-premium transition-all duration-300 flex flex-col justify-between"
+              className="p-8 sm:p-10 rounded-2xl bg-white border border-clinical-border shadow-subtle hover:shadow-premium transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 mb-6">
@@ -38,9 +38,9 @@ export default function TestimonialsSection() {
 
               <div className="mt-8 pt-6 border-t border-clinical-border flex items-center justify-between">
                 <div>
-                  <h4 className="font-medium text-sm text-clinical-dark">
+                  <p className="font-medium text-sm text-clinical-dark">
                     {t.patientName}
-                  </h4>
+                  </p>
                   <span className="text-xs text-brand-700 font-medium block">
                     {t.treatmentType}
                   </span>

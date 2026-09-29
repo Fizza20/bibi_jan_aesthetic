@@ -119,7 +119,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative w-full max-w-md sm:max-w-lg aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-brand-200/60 group"
+              className="relative w-full max-w-md sm:max-w-lg aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-200/60 group"
             >
               {/* Primary Image */}
               <Image
@@ -138,12 +138,12 @@ export default function HeroSection() {
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest text-brand-700 font-bold block">
+                    <span className="text-xs uppercase tracking-wider text-brand-700 font-semibold block">
                       Evidence-Led Protocol
                     </span>
-                    <h3 className="font-serif text-sm font-medium text-clinical-dark mt-0.5">
+                    <p className="font-serif text-sm font-medium text-clinical-dark mt-0.5">
                       Bespoke Dermal Restoration
-                    </h3>
+                    </p>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-600">
                     <Sparkles className="w-4 h-4" />
@@ -155,19 +155,19 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator / Explore Experience CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="mt-12 flex justify-center"
+          className="mt-10 flex justify-center"
         >
           <a
             href="#trust"
-            className="flex flex-col items-center gap-1.5 text-[10px] uppercase tracking-widest text-clinical-muted hover:text-brand-600 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-brand-500/20 text-xs uppercase tracking-wider font-semibold text-clinical-slate hover:text-brand-600 hover:border-brand-500 transition-all shadow-subtle group"
           >
             <span>Explore Experience</span>
-            <ChevronDown className="w-4 h-4 animate-bounce text-brand-500" />
+            <ChevronDown className="w-3.5 h-3.5 text-brand-500 group-hover:translate-y-0.5 transition-transform" />
           </a>
         </motion.div>
       </div>

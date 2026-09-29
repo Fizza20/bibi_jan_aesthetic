@@ -392,9 +392,9 @@ export default function AppointmentSection() {
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-clinical-dark">
+                    <h3 className="text-sm font-semibold text-clinical-dark">
                       Private & Confidential Assessment
-                    </h4>
+                    </h3>
                     <p className="text-xs text-clinical-slate mt-0.5">
                       Consultations are conducted in an unhurried, discreet clinical environment.
                     </p>
@@ -406,9 +406,9 @@ export default function AppointmentSection() {
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-clinical-dark">
+                    <h3 className="text-sm font-semibold text-clinical-dark">
                       Personalized Treatment Blueprint
-                    </h4>
+                    </h3>
                     <p className="text-xs text-clinical-slate mt-0.5">
                       No generic packages. Every recommendation is tailored strictly to your physiology.
                     </p>
@@ -420,9 +420,9 @@ export default function AppointmentSection() {
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-clinical-dark">
+                    <h3 className="text-sm font-semibold text-clinical-dark">
                       Prompt Concierge Response
-                    </h4>
+                    </h3>
                     <p className="text-xs text-clinical-slate mt-0.5">
                       Our reception coordinates directly to confirm your optimal appointment slot.
                     </p>
@@ -438,9 +438,9 @@ export default function AppointmentSection() {
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-wider font-semibold text-clinical-dark">
+                  <h3 className="text-xs uppercase tracking-wider font-semibold text-clinical-dark">
                     Prefer Direct Messaging?
-                  </h4>
+                  </h3>
                   <p className="text-xs text-clinical-slate mt-0.5">
                     Connect directly with our patient concierge via WhatsApp.
                   </p>
@@ -458,8 +458,8 @@ export default function AppointmentSection() {
           </div>
 
           {/* Right Column: Appointment Request Form wrapped in Suspense */}
-          <div className="lg:col-span-7 bg-clinical-surface p-8 sm:p-10 rounded-3xl border border-clinical-border shadow-premium relative">
-            <Suspense fallback={<div className="p-8 text-center text-sm text-clinical-muted">Loading consultation form...</div>}>
+          <div className="lg:col-span-7 bg-clinical-surface p-8 sm:p-10 rounded-2xl border border-clinical-border shadow-premium relative">
+            <Suspense fallback={<div className="p-8 text-center text-sm text-clinical-slate bg-white rounded-2xl border border-clinical-border">Preparing consultation booking portal...</div>}>
               <AppointmentForm />
             </Suspense>
           </div>

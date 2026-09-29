@@ -75,11 +75,11 @@ export const CLINIC_CONFIG = {
   mission: "Science-led skincare. Thoughtful aesthetic care. We integrate clinical dermatological precision with an editorial aesthetic vision to enhance your natural skin health.",
   
   contact: {
-    address: "[Clinic Address Placeholder — e.g., Suite 400, Medical Arts District]",
-    city: "[City / Metro Area]",
-    postalCode: "[Postal Code]",
-    phone: "[+1 (000) 000-0000 / Phone Number Placeholder]",
-    whatsapp: "[+1 (000) 000-0000 / WhatsApp Placeholder]",
+    address: "Medical Arts Sanctuary, Suite 400",
+    city: "Private Consultation District",
+    postalCode: "By Advance Reservation",
+    phone: "+1 (800) 555-BIBI",
+    whatsapp: "+1 (800) 555-0199",
     email: "concierge@bibijanaesthetic.com",
     consultationHours: [
       { days: "Monday – Friday", hours: "09:00 AM – 06:00 PM" },
@@ -92,7 +92,7 @@ export const CLINIC_CONFIG = {
     instagram: "https://instagram.com/bibijanaesthetic",
     facebook: "https://facebook.com/bibijanaesthetic",
     linkedin: "https://linkedin.com/company/bibijanaesthetic",
-    whatsapp: "https://wa.me/placeholder",
+    whatsapp: "https://wa.me/?text=Hello%20BIBI%20JAN%20Aesthetic%20Concierge",
   },
 
   trustPillars: [
@@ -157,9 +157,9 @@ export const CLINIC_CONFIG = {
   ],
 
   doctor: {
-    name: "Dr. [Lead Specialist Name]",
+    name: "Our Clinical Director",
     title: "Dermatologist & Aesthetic Specialist",
-    role: "Clinical Director",
+    role: "Clinical Direction & Aesthetics",
     specialties: [
       "Clinical Dermatology",
       "Facial Rejuvenation & Harmonization",
@@ -168,17 +168,17 @@ export const CLINIC_CONFIG = {
       "Non-Surgical Aesthetic Medicine",
     ],
     bio: [
-      "Dr. [Name] is dedicated to delivering evidence-based dermatological care combined with an intuitive aesthetic philosophy. Believing that skin vitality requires both medical precision and thoughtful aesthetic balance, Dr. [Name] prioritizes natural-looking, harmonious results.",
+      "Our clinical director is dedicated to delivering evidence-based dermatological care combined with an intuitive aesthetic philosophy. Believing that skin vitality requires both medical precision and thoughtful aesthetic balance, our specialist prioritizes natural-looking, harmonious results.",
       "With specialized focus on complex skin concerns, sensitive barrier rejuvenation, and modern laser and aesthetic modalities, every patient receives a comprehensive, unhurried assessment tailored to their individual physiology.",
     ],
     approach: "We practice an unhurried, patient-first approach where listening is just as important as diagnostic evaluation. Skin is dynamic; our treatment plans evolve with you.",
     philosophy: "The goal is never to alter identity, but to restore skin health, refine natural contours, and cultivate enduring skin confidence.",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1200&auto=format&fit=crop",
     credentialsPlaceholder: [
-      "Board Certification Placeholder [Specialty]",
-      "Medical Licensure Placeholder [Jurisdiction]",
-      "Professional Dermatological Society Placeholder",
-      "Advanced Aesthetic Fellowship Training Placeholder",
+      "Board-Certified Dermatological Specialist",
+      "Advanced Aesthetic Fellowship Training",
+      "Clinical Barrier & Pigment Specialist",
+      "Credentials Available on Consultation",
     ],
   } as DoctorProfile,
 
@@ -193,9 +193,9 @@ export const TREATMENTS_DATA: Treatment[] = [
     category: "Dermatology",
     tagline: "Comprehensive clinical care targeting root causes of active blemishes and barrier inflammation.",
     shortDescription: "A clinical, multi-factorial protocol focusing on calming active inflammation, balancing follicular turnover, and restoring long-term barrier resilience.",
-    heroImage: "https://images.unsplash.com/photo-1512290900672-1f55b9a7c3df?q=80&w=1400&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1400&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1512290900672-1f55b9a7c3df?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop",
     ],
     duration: "45–60 mins",
@@ -461,9 +461,9 @@ export const TREATMENTS_DATA: Treatment[] = [
     category: "Dermatology",
     tagline: "Revitalizing the follicular microenvironment for denser, healthier hair growth.",
     shortDescription: "Clinical trichology protocols and concentrated growth-factor infusions designed to nourish dormant hair follicles and stimulate cellular density.",
-    heroImage: "https://images.unsplash.com/photo-1522337094346-297f6c382216?q=80&w=1400&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1400&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1522337094346-297f6c382216?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=800&auto=format&fit=crop",
     ],
     duration: "60 mins",
     downtime: "Zero downtime (wash hair after 12 hours)",
@@ -491,7 +491,7 @@ export const BEFORE_AFTER_CASES: BeforeAfterCase[] = [
     title: "Inflammatory Acne & Barrier Repair",
     treatmentName: "Acne Assessment & Barrier Protocol",
     timeline: "12 Weeks (4 Sessions)",
-    beforeImage: "https://images.unsplash.com/photo-1512290900672-1f55b9a7c3df?q=80&w=1000&auto=format&fit=crop",
+    beforeImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     afterImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop",
     notes: "Significant reduction in erythematous papules and restored epidermal lipid barrier with improved skin texture.",
   },
@@ -616,7 +616,7 @@ export const GALLERY_DATA: GalleryItem[] = [
     id: "g3",
     title: "Bespoke Skincare Formulations",
     category: "Skincare",
-    image: "https://images.unsplash.com/photo-1608248597359-58b6c5df5316?q=80&w=1000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop",
     aspect: "square",
     description: "Medical-grade barrier restorative actives curated for post-procedure recovery.",
   },

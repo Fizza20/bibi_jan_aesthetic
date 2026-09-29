@@ -55,9 +55,9 @@ export default function WhyBibiJanSection() {
           
           {/* Left Column: Visual Storytelling Collage */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[3/4] border border-clinical-border">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] border border-clinical-border">
               <Image
-                src="https://images.unsplash.com/photo-1512290900672-1f55b9a7c3df?q=80&w=1200&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop"
                 alt="BIBI JAN Aesthetic Clinical Environment"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -65,8 +65,8 @@ export default function WhyBibiJanSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-clinical-dark/60 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60">
-                <span className="text-[10px] uppercase tracking-widest text-brand-700 font-bold block">
+              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-white/90 backdrop-blur-md border border-white/60">
+                <span className="text-xs uppercase tracking-wider text-brand-700 font-semibold block">
                   Clinic Principle
                 </span>
                 <p className="font-serif text-sm text-clinical-dark italic mt-1">
