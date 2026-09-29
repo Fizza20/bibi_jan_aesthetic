@@ -356,7 +356,7 @@ function AppointmentForm() {
         )}
       </button>
 
-      <p className="text-[11px] text-center text-clinical-muted">
+      <p className="text-xs text-center text-clinical-muted">
         By submitting, you agree to our privacy policy. Your medical data is strictly confidential.
       </p>
     </form>

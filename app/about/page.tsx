@@ -29,7 +29,7 @@ export default function AboutPage() {
 
         {/* Feature Visual Spread */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-24">
-          <div className="lg:col-span-7 relative h-96 sm:h-[460px] rounded-3xl overflow-hidden shadow-2xl border border-clinical-border">
+          <div className="lg:col-span-7 relative h-96 sm:h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-clinical-border">
             <Image
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1400&auto=format&fit=crop"
               alt="Inside BIBI JAN Aesthetic Sanctuary"
@@ -40,13 +40,13 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="lg:col-span-5 flex flex-col justify-center p-6 sm:p-10 rounded-3xl bg-clinical-ice/50 border border-brand-200">
+          <div className="lg:col-span-5 flex flex-col justify-center p-6 sm:p-10 rounded-2xl bg-clinical-ice/50 border border-brand-200">
             <span className="text-xs uppercase tracking-widest font-semibold text-brand-700 block mb-2">
               Our Clinical Manifesto
             </span>
-            <h3 className="font-serif text-2xl font-medium text-clinical-dark mb-4">
+            <h2 className="font-serif text-2xl font-medium text-clinical-dark mb-4">
               Restoring Biological Equilibrium
-            </h3>
+            </h2>
             <p className="text-sm text-clinical-slate leading-relaxed mb-6 font-light">
               We reject the aggressive trend toward over-treatment and exaggerated transformations. Instead, we treat the skin as a living, dynamic organ requiring balance, cellular hydration, and gentle progressive care.
             </p>
@@ -103,7 +103,7 @@ export default function AboutPage() {
                     {p.text}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-clinical-border text-[11px] font-semibold text-brand-600 uppercase tracking-widest">
+                <div className="mt-6 pt-4 border-t border-clinical-border text-xs font-semibold text-brand-600 uppercase tracking-widest">
                   Principle 0{idx + 1}
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
         </div>
 
         {/* Doctor Highlight Callout */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-clinical-dark text-white mb-24 relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-2xl bg-clinical-dark text-white mb-24 relative overflow-hidden">
           <div className="relative z-10 max-w-2xl">
             <span className="text-xs uppercase tracking-widest text-brand-400 font-semibold block mb-2">
               Clinical Leadership

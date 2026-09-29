@@ -51,9 +51,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs uppercase tracking-widest text-brand-400 font-semibold mb-5">
+            <h3 className="text-xs uppercase tracking-widest text-brand-400 font-semibold mb-5">
               Explore
-            </h4>
+            </h3>
             <ul className="space-y-3 text-sm text-slate-300">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -81,10 +81,10 @@ export default function Footer() {
 
           {/* Clinic Hours & Appointments */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs uppercase tracking-widest text-brand-400 font-semibold mb-5 flex items-center gap-2">
+            <h3 className="text-xs uppercase tracking-widest text-brand-400 font-semibold mb-5 flex items-center gap-2">
               <Clock className="w-3.5 h-3.5" />
               <span>Consultation Hours</span>
-            </h4>
+            </h3>
             <div className="space-y-2.5 text-xs text-slate-300">
               {CLINIC_CONFIG.contact.consultationHours.map((sched, idx) => (
                 <div key={idx} className="flex justify-between border-b border-white/5 pb-1.5">
@@ -107,9 +107,9 @@ export default function Footer() {
 
           {/* Location & Inquiries */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs uppercase tracking-widest text-brand-400 font-semibold mb-5">
+            <h3 className="text-xs uppercase tracking-widest text-brand-400 font-semibold mb-5">
               Clinic Address
-            </h4>
+            </h3>
             <div className="space-y-3 text-xs text-slate-300">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />

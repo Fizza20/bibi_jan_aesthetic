@@ -81,7 +81,7 @@ export default async function TreatmentDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-2 text-xs text-clinical-charcoal">
                   <Clock className="w-4 h-4 text-brand-500" />
                   <div>
-                    <span className="text-[10px] text-clinical-muted uppercase tracking-wider block">Duration</span>
+                    <span className="text-xs text-clinical-muted uppercase tracking-wider block">Duration</span>
                     <span className="font-medium">{treatment.duration}</span>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export default async function TreatmentDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-2 text-xs text-clinical-charcoal">
                   <Activity className="w-4 h-4 text-brand-500" />
                   <div>
-                    <span className="text-[10px] text-clinical-muted uppercase tracking-wider block">Downtime</span>
+                    <span className="text-xs text-clinical-muted uppercase tracking-wider block">Downtime</span>
                     <span className="font-medium">{treatment.downtime}</span>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default async function TreatmentDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-2 text-xs text-clinical-charcoal">
                   <Sparkles className="w-4 h-4 text-brand-500" />
                   <div>
-                    <span className="text-[10px] text-clinical-muted uppercase tracking-wider block">Recommended</span>
+                    <span className="text-xs text-clinical-muted uppercase tracking-wider block">Recommended</span>
                     <span className="font-medium">{treatment.sessionsRecommended}</span>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default async function TreatmentDetailPage({ params }: PageProps) {
             </div>
 
             {/* Hero Image */}
-            <div className="lg:col-span-5 relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border border-clinical-border">
+            <div className="lg:col-span-5 relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-2xl border border-clinical-border">
               <Image
                 src={treatment.heroImage}
                 alt={treatment.title}
