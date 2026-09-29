@@ -31,7 +31,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -46,26 +45,29 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+
           {/* Official Brand Logo */}
           <Link
             href="/"
             className="group flex items-center gap-3 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg p-1"
           >
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/logo.png"
-                alt="BIBI JAN AESTHETIC Official Logo"
-                fill
-                priority
-                sizes="(max-width: 768px) 44px, 48px"
-                className="object-contain"
-              />
+            <div className="relative w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] transition-transform duration-300 group-hover:scale-105">
+               <Image
+                   src="/logo.png"
+                   alt="BIBI JAN AESTHETIC Official Logo"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 52px, 56px"
+                  className="object-contain"
+                />
             </div>
+
             <div className="flex flex-col">
-              <span className="font-sans font-bold text-base sm:text-lg tracking-wider text-clinical-dark uppercase leading-none">
+              <span className="font-sans font-bold text-[17px] sm:text-lg tracking-wider text-clinical-dark uppercase leading-none">
                 BIBI JAN
               </span>
-              <span className="text-xs tracking-[0.2em] text-brand-600 font-medium uppercase mt-0.5">
+
+              <span className="text-xs tracking-[0.2em] text-brand-600 font-medium uppercase mt-1">
                 AESTHETICS
               </span>
             </div>
@@ -75,20 +77,28 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-clinical-slate">
             {NAV_ITEMS.map((item) => {
               const isActive = pathname === item.href;
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`relative py-1 transition-colors duration-200 hover:text-brand-600 ${
-                    isActive ? "text-brand-700 font-semibold" : "text-clinical-charcoal"
+                    isActive
+                      ? "text-brand-700 font-semibold"
+                      : "text-clinical-charcoal"
                   }`}
                 >
                   {item.label}
+
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
                       className="absolute -bottom-1 left-0 right-0 h-[2px] bg-brand-500 rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </Link>
@@ -134,7 +144,11 @@ export default function Navbar() {
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -159,6 +173,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-3">
                 {NAV_ITEMS.map((item) => {
                   const isActive = pathname === item.href;
+
                   return (
                     <Link
                       key={item.href}
@@ -187,6 +202,7 @@ export default function Navbar() {
                 <Calendar className="w-4 h-4" />
                 <span>Book an Appointment</span>
               </Link>
+
               <div className="text-center text-xs text-clinical-muted mt-2">
                 Discreet & Confidential Consultations
               </div>
