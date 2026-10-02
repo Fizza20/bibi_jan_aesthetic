@@ -5,7 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
+import {
+  Menu,
+  X,
+  Phone,
+  Calendar,
+  ArrowRight,
+  ShieldCheck,
+} from "lucide-react";
 import MagneticButton from "../animations/MagneticButton";
 
 const NAV_ITEMS = [
@@ -27,7 +34,9 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -37,140 +46,154 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Main Navbar */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+        className={`fixed left-0 right-0 top-6 z-40 overflow-visible border-b border-slate-100/80 transition-all duration-500 ${
           scrolled
-            ? "py-3 bg-white/90 backdrop-blur-md border-b border-brand-500/10 shadow-sm"
-            : "py-5 bg-transparent"
+            ? "bg-white/95 shadow-[0_4px_24px_rgba(15,23,42,0.05)] backdrop-blur-xl"
+            : "bg-white/95 backdrop-blur-md"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
-
-          {/* Official Brand Logo */}
+        <div
+          className={`relative mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12 transition-all duration-500 ${
+            scrolled ? "min-h-[68px]" : "min-h-[74px]"
+          }`}
+        >
+          {/* Brand */}
           <Link
             href="/"
-            className="group flex items-center gap-3 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg p-1"
+            className="group relative flex shrink-0 items-center rounded-lg p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            aria-label="BIBI JAN AESTHETIC Home"
           >
-            <div className="relative w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] transition-transform duration-300 group-hover:scale-105">
-               <Image
-                   src="/logo.png"
-                   alt="BIBI JAN AESTHETIC Official Logo"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 52px, 56px"
-                  className="object-contain"
-                />
+            {/* Floating Logo */}
+            <div
+              className={`absolute left-0 top-1/2 z-20 -translate-y-1/2 transition-all duration-500 ${
+                scrolled
+                  ? "h-[92px] w-[92px]"
+                  : "h-[100px] w-[100px]"
+              }`}
+            >
+              {/* Logo Circle */}
+              <div className="absolute inset-0 rounded-full bg-white shadow-[0_7px_24px_rgba(15,23,42,0.09)]" />
+
+              <Image
+                src="/logo.png"
+                alt="BIBI JAN AESTHETIC Official Logo"
+                fill
+                priority
+                sizes="100px"
+                className="relative z-10 object-contain p-2 transition-transform duration-300 group-hover:scale-[1.03]"
+              />
             </div>
 
-            <div className="flex flex-col">
-              <span className="font-sans font-bold text-[17px] sm:text-lg tracking-wider text-clinical-dark uppercase leading-none">
+            {/* Brand Name */}
+            <div className="ml-[112px] hidden flex-col sm:flex">
+              <span className="font-sans text-[15px] font-semibold uppercase leading-none tracking-[0.16em] text-clinical-dark">
                 BIBI JAN
               </span>
 
-              <span className="text-xs tracking-[0.2em] text-brand-600 font-medium uppercase mt-1">
+              <span className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.3em] text-brand-600">
                 AESTHETICS
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-clinical-slate">
-            {NAV_ITEMS.map((item) => {
-              const isActive = pathname === item.href;
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center lg:flex">
+            <div className="flex items-center gap-6 xl:gap-7">
+              {NAV_ITEMS.map((item) => {
+                const isActive = pathname === item.href;
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`relative py-1 transition-colors duration-200 hover:text-brand-600 ${
-                    isActive
-                      ? "text-brand-700 font-semibold"
-                      : "text-clinical-charcoal"
-                  }`}
-                >
-                  {item.label}
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`group relative py-3 text-[13px] font-medium transition-colors duration-200 ${
+                      isActive
+                        ? "text-brand-700"
+                        : "text-clinical-charcoal hover:text-brand-600"
+                    }`}
+                  >
+                    {item.label}
 
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-brand-500 rounded-full"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
+                    <span
+                      className={`absolute bottom-1 left-0 h-px bg-brand-500 transition-all duration-300 ${
+                        isActive
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
                     />
-                  )}
-                </Link>
-              );
-            })}
+                  </Link>
+                );
+              })}
+            </div>
           </nav>
 
-          {/* Right Action / CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Desktop Actions */}
+          <div className="hidden items-center gap-5 lg:flex">
             <Link
               href="tel:+18005552424"
-              className="text-xs font-medium text-clinical-slate hover:text-brand-600 transition-colors flex items-center gap-1.5"
+              className="group flex items-center gap-2 text-[11px] font-medium tracking-wide text-clinical-slate transition-colors hover:text-brand-600"
             >
-              <Phone className="w-3.5 h-3.5 text-brand-500" />
+              <Phone className="h-3.5 w-3.5 text-brand-500 transition-transform duration-200 group-hover:scale-105" />
               <span>Direct Concierge</span>
             </Link>
 
             <MagneticButton strength={0.2}>
               <Link
-                href="/book-appointment"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-brand-500 hover:bg-brand-600 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-brand-500/20 active:scale-95"
-              >
-                <Calendar className="w-3.5 h-3.5" />
-                <span>Book Appointment</span>
+                  href="/book-appointment"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-500 bg-brand-500 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-transparent hover:text-brand-600 active:scale-[0.98]"
+               >
+               <Calendar className="h-3.5 w-3.5" />
+               <span>Book Appointment</span>
               </Link>
             </MagneticButton>
           </div>
 
-          {/* Mobile Menu Trigger */}
-          <div className="flex items-center gap-3 lg:hidden">
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-2.5 lg:hidden">
             <Link
               href="/book-appointment"
-              className="p-2 rounded-full bg-brand-500 text-white text-xs font-medium flex items-center justify-center"
+              className="flex h-10 w-10 items-center justify-center border border-brand-500 bg-brand-500 text-white transition-colors hover:bg-brand-600"
               aria-label="Book Appointment"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="h-4 w-4" />
             </Link>
 
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 text-clinical-dark hover:text-brand-600 transition-colors focus:outline-none"
+              className="flex h-10 w-10 items-center justify-center border border-slate-200 text-clinical-dark transition-colors hover:border-brand-300 hover:text-brand-600 focus:outline-none"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-[65px] bg-white z-30 lg:hidden flex flex-col justify-between p-6 overflow-y-auto"
+            className="fixed inset-0 top-[100px] z-30 flex flex-col justify-between overflow-y-auto border-t border-slate-200 bg-white px-6 pb-6 pt-5 lg:hidden"
           >
-            <div className="flex flex-col gap-5 pt-4">
-              <div className="flex items-center gap-2 pb-4 border-b border-brand-500/10 text-xs font-semibold uppercase tracking-widest text-brand-600">
-                <ShieldCheck className="w-4 h-4" />
+            <div>
+              <div className="flex items-center gap-2 border-b border-slate-200 pb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-600">
+                <ShieldCheck className="h-4 w-4" />
                 <span>Clinical & Aesthetic Care</span>
               </div>
 
-              <div className="flex flex-col gap-3">
+              <nav className="mt-4 flex flex-col">
                 {NAV_ITEMS.map((item) => {
                   const isActive = pathname === item.href;
 
@@ -179,33 +202,40 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`text-lg font-medium py-2 px-3 rounded-lg flex items-center justify-between transition-colors ${
+                      className={`group flex items-center justify-between border-b border-slate-100 py-4 text-base font-medium transition-colors ${
                         isActive
-                          ? "bg-brand-50 text-brand-700 font-semibold"
-                          : "text-clinical-charcoal hover:bg-slate-50"
+                          ? "text-brand-700"
+                          : "text-clinical-charcoal hover:text-brand-600"
                       }`}
                     >
                       <span>{item.label}</span>
-                      <ArrowRight className="w-4 h-4 text-brand-400" />
+
+                      <ArrowRight
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          isActive
+                            ? "translate-x-0.5 text-brand-500"
+                            : "text-slate-300 group-hover:translate-x-0.5 group-hover:text-brand-400"
+                        }`}
+                      />
                     </Link>
                   );
                 })}
-              </div>
+              </nav>
             </div>
 
-            <div className="pt-6 border-t border-brand-500/10 flex flex-col gap-3">
+            <div className="mt-8 border-t border-slate-200 pt-5">
               <Link
                 href="/book-appointment"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 px-6 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-center text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+                className="flex w-full items-center justify-center gap-2 border border-brand-500 bg-brand-500 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-brand-600"
               >
-                <Calendar className="w-4 h-4" />
+                <Calendar className="h-4 w-4" />
                 <span>Book an Appointment</span>
               </Link>
 
-              <div className="text-center text-xs text-clinical-muted mt-2">
+              <p className="mt-3 text-center text-[11px] text-clinical-muted">
                 Discreet & Confidential Consultations
-              </div>
+              </p>
             </div>
           </motion.div>
         )}

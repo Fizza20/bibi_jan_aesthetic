@@ -13,8 +13,12 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-24 bg-clinical-surface relative overflow-hidden" id="faqs">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section
+      className="py-24 bg-clinical-surface relative overflow-hidden"
+      id="faqs"
+    >
+      {/* Controlled centered content width */}
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -22,18 +26,22 @@ export default function FAQSection() {
             <HelpCircle className="w-3.5 h-3.5 text-brand-500" />
             <span>Questions & Guidance</span>
           </div>
+
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinical-dark">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-clinical-slate text-sm sm:text-base">
-            Transparent answers regarding our clinical consultation process, treatment safety, and aftercare standards.
+
+          <p className="mt-3 text-clinical-slate text-sm sm:text-base leading-relaxed">
+            Transparent answers regarding our clinical consultation process,
+            treatment safety, and aftercare standards.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4">
           {FAQS_DATA.map((faq) => {
             const isOpen = openId === faq.id;
+
             return (
               <div
                 key={faq.id}
@@ -48,9 +56,12 @@ export default function FAQSection() {
                   <span className="font-serif text-base sm:text-lg font-medium text-clinical-dark">
                     {faq.question}
                   </span>
+
                   <div
                     className={`w-8 h-8 rounded-full bg-clinical-ice flex items-center justify-center text-brand-600 shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-brand-500 text-white" : ""
+                      isOpen
+                        ? "rotate-180 bg-brand-500 text-white"
+                        : ""
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -67,11 +78,12 @@ export default function FAQSection() {
           })}
         </div>
 
-        {/* Still have questions banner */}
-        <div className="mt-12 text-center">
+        {/* Still have questions */}
+        <div className="max-w-4xl mx-auto mt-12 text-center">
           <p className="text-sm text-clinical-slate mb-3">
             Have a question about a specific condition or customized protocol?
           </p>
+
           <Link
             href="/contact"
             className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-700 hover:text-brand-800 transition-colors"
@@ -80,7 +92,6 @@ export default function FAQSection() {
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
-
       </div>
     </section>
   );

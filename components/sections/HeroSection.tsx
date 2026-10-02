@@ -3,159 +3,185 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Shield, ChevronDown } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Shield,
+  ChevronDown,
+} from "lucide-react";
 import BiomimeticSkinCanvas from "../3d/BiomimeticSkinCanvas";
 import MagneticButton from "../animations/MagneticButton";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-gradient-to-b from-clinical-surface via-white to-clinical-ice/30">
-      {/* Dynamic 3D Biomimetic Cellular Membrane Ambient Canvas */}
+    <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-gradient-to-b from-clinical-surface via-white to-clinical-ice/30 pb-16 pt-28 sm:min-h-screen">
       <BiomimeticSkinCanvas intensity={0.8} />
 
-      {/* Decorative Subtle Organic Arcs (inspired by the uploaded logo's crescent arc) */}
-      <div 
-        className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-brand-500/10 opacity-60"
-        aria-hidden="true" 
-      />
-      <div 
-        className="pointer-events-none absolute -top-20 -right-20 w-[450px] h-[450px] rounded-full border border-brand-500/15 opacity-40"
-        aria-hidden="true" 
+      {/* Decorative Organic Arcs */}
+      <div
+        className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full border border-brand-500/10 opacity-60"
+        aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Brand Typography & Action */}
-          <div className="lg:col-span-7 flex flex-col items-start">
-            
-            {/* Clinical Brand Pill */}
+      <div
+        className="pointer-events-none absolute -right-20 -top-20 h-[450px] w-[450px] rounded-full border border-brand-500/15 opacity-40"
+        aria-hidden="true"
+      />
+
+      {/* Main Content */}
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+
+          {/* Left Content */}
+          <div className="flex flex-col items-start lg:col-span-7">
+
+            {/* Brand Label */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200 shadow-subtle mb-6"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3.5 py-1.5 shadow-subtle"
             >
-              <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
-              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-brand-700">
+              <span
+                className="h-2 w-2 rounded-full bg-brand-500"
+                aria-hidden="true"
+              />
+
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
                 Bibi Jan Aesthetic Clinic
               </span>
             </motion.div>
 
-            {/* Cinematic Editorial Headline */}
+            {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-clinical-dark font-normal leading-[1.12] tracking-tight"
+              className="max-w-3xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.02em] text-clinical-dark sm:text-5xl md:text-6xl lg:text-[4.2rem]"
             >
               Where Dermatology Meets{" "}
-              <span className="italic font-serif text-brand-600 font-medium">
+              <span className="font-serif italic font-medium text-brand-600">
                 Refined Beauty.
               </span>
             </motion.h1>
 
-            {/* Editorial Supporting Description */}
+            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-6 text-base sm:text-lg text-clinical-slate font-light leading-relaxed max-w-xl"
+              className="mt-6 max-w-xl text-base font-light leading-relaxed text-clinical-slate sm:text-lg"
             >
-              Advanced dermatological care and aesthetic treatments designed around your individual skin needs, physiological balance, and enduring confidence.
+              Advanced dermatological care and aesthetic treatments designed
+              around your individual skin needs, physiological balance, and
+              enduring confidence.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+              className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center"
             >
               <MagneticButton strength={0.15}>
                 <Link
                   href="/book-appointment"
-                  className="px-8 py-4 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/35"
+                  className="flex items-center justify-center gap-2.5 rounded-full bg-brand-500 px-8 py-4 text-xs font-semibold uppercase tracking-widest text-white shadow-lg shadow-brand-500/20 transition-all duration-300 hover:bg-brand-600 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95"
                 >
                   <span>Book an Appointment</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </MagneticButton>
 
               <Link
                 href="/treatments"
-                className="px-7 py-4 rounded-full bg-white hover:bg-brand-50/60 text-clinical-charcoal border border-clinical-border font-medium text-xs uppercase tracking-widest flex items-center justify-center transition-colors shadow-sm"
+                className="flex items-center justify-center rounded-full border border-clinical-border bg-white px-7 py-4 text-xs font-medium uppercase tracking-widest text-clinical-charcoal shadow-sm transition-colors hover:bg-brand-50/60"
               >
                 <span>Explore Treatments</span>
               </Link>
             </motion.div>
 
-            {/* Trust Micro-Badges */}
+            {/* Trust Points */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="mt-12 pt-8 border-t border-brand-500/10 grid grid-cols-2 sm:grid-cols-3 gap-6 w-full max-w-xl"
+              className="mt-10 grid w-full max-w-xl grid-cols-1 gap-4 border-t border-brand-500/10 pt-7 sm:grid-cols-3 sm:gap-5"
             >
               <div className="flex items-center gap-2.5">
-                <Shield className="w-4 h-4 text-brand-500 shrink-0" />
-                <span className="text-xs font-medium text-clinical-charcoal">Medical Assessment</span>
+                <Shield className="h-4 w-4 shrink-0 text-brand-500" />
+                <span className="text-xs font-medium text-clinical-charcoal">
+                  Medical Assessment
+                </span>
               </div>
+
               <div className="flex items-center gap-2.5">
-                <Sparkles className="w-4 h-4 text-brand-500 shrink-0" />
-                <span className="text-xs font-medium text-clinical-charcoal">Tailored Pathways</span>
+                <Sparkles className="h-4 w-4 shrink-0 text-brand-500" />
+                <span className="text-xs font-medium text-clinical-charcoal">
+                  Tailored Pathways
+                </span>
               </div>
-              <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
-                <span className="text-xs font-medium text-clinical-charcoal">Natural Enhancement</span>
+
+              <div className="flex items-center gap-2.5">
+                <span
+                  className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500"
+                  aria-hidden="true"
+                />
+
+                <span className="text-xs font-medium text-clinical-charcoal">
+                  Natural Enhancement
+                </span>
               </div>
             </motion.div>
-
           </div>
 
-          {/* Right Column: Premium Editorial Image Reveal */}
-          <div className="lg:col-span-5 relative flex justify-center">
+          {/* Right Image */}
+          <div className="relative flex justify-center lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative w-full max-w-md sm:max-w-lg aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-brand-200/60 group"
+              className="group relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[1.5rem] border border-brand-200/60 shadow-2xl sm:max-w-lg"
             >
-              {/* Primary Image */}
               <Image
                 src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop"
                 alt="BIBI JAN Aesthetic Clinical Treatment"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 500px"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
               />
 
-              {/* Gradient Scrim */}
-              <div className="absolute inset-0 bg-gradient-to-t from-clinical-dark/60 via-transparent to-transparent pointer-events-none" />
+              {/* Image Overlay */}
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-dark/60 via-transparent to-transparent"
+                aria-hidden="true"
+              />
 
-              {/* Floating Editorial Card at bottom */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
-                <div className="flex items-center justify-between">
+              {/* Image Information */}
+              <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/40 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6">
+                <div className="flex items-center justify-between gap-4">
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-brand-700 font-semibold block">
+                    <span className="block text-xs font-semibold uppercase tracking-wider text-brand-700">
                       Evidence-Led Protocol
                     </span>
-                    <p className="font-serif text-sm font-medium text-clinical-dark mt-0.5">
+
+                    <p className="mt-0.5 font-serif text-sm font-medium text-clinical-dark">
                       Bespoke Dermal Restoration
                     </p>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-600">
-                    <Sparkles className="w-4 h-4" />
+
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500/10 text-brand-600">
+                    <Sparkles className="h-4 w-4" />
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
-
         </div>
 
-        {/* Scroll Indicator / Explore Experience CTA */}
+        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -164,10 +190,11 @@ export default function HeroSection() {
         >
           <a
             href="#trust"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-brand-500/20 text-xs uppercase tracking-wider font-semibold text-clinical-slate hover:text-brand-600 hover:border-brand-500 transition-all shadow-subtle group"
+            className="group inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-clinical-slate shadow-subtle backdrop-blur-sm transition-all hover:border-brand-500 hover:text-brand-600"
           >
             <span>Explore Experience</span>
-            <ChevronDown className="w-3.5 h-3.5 text-brand-500 group-hover:translate-y-0.5 transition-transform" />
+
+            <ChevronDown className="h-3.5 w-3.5 text-brand-500 transition-transform group-hover:translate-y-0.5" />
           </a>
         </motion.div>
       </div>

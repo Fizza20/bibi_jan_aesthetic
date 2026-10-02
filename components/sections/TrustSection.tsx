@@ -1,5 +1,10 @@
 import { CLINIC_CONFIG } from "@/data/clinic-data";
-import { ShieldCheck, Sparkles, Cpu, HeartHandshake } from "lucide-react";
+import {
+  ShieldCheck,
+  Sparkles,
+  Cpu,
+  HeartHandshake,
+} from "lucide-react";
 
 const ICON_MAP = {
   ShieldCheck: ShieldCheck,
@@ -10,55 +15,72 @@ const ICON_MAP = {
 
 export default function TrustSection() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="trust">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        
-        {/* Editorial Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold tracking-widest uppercase mb-4">
+    <section
+      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      id="trust"
+    >
+      <div className="site-container">
+        {/* Section Introduction */}
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-700">
             <span>Our Foundation</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinical-dark leading-tight">
+
+          <h2 className="font-serif text-3xl font-normal leading-[1.15] tracking-tight text-clinical-dark sm:text-4xl lg:text-[3.25rem]">
             Science-led skincare.{" "}
-            <span className="italic font-serif text-brand-600">
+            <span className="italic text-brand-600">
               Thoughtful aesthetic care.
             </span>
           </h2>
-          <p className="mt-5 text-base sm:text-lg text-clinical-slate font-light leading-relaxed">
-            At BIBI JAN AESTHETIC, we integrate medical dermatological precision with an editorial aesthetic eye. We believe optimal skin health is never about aggressive intervention, but about respectful diagnostic evaluation, customized barrier restoration, and treatments tailored to your unique anatomical harmony.
+
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-clinical-slate sm:text-base sm:leading-7">
+            At BIBI JAN AESTHETIC, we integrate medical dermatological
+            precision with an editorial aesthetic eye. We believe optimal
+            skin health is never about aggressive intervention, but about
+            respectful diagnostic evaluation, customized barrier restoration,
+            and treatments tailored to your unique anatomical harmony.
           </p>
         </div>
 
-        {/* 4 Trust Pillars Grid with Asymmetric Editorial Nuance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Trust Pillars */}
+        <div className="mt-14 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {CLINIC_CONFIG.trustPillars.map((pillar, idx) => {
-            const Icon = ICON_MAP[pillar.icon as keyof typeof ICON_MAP] || ShieldCheck;
+            const Icon =
+              ICON_MAP[pillar.icon as keyof typeof ICON_MAP] ||
+              ShieldCheck;
+
             return (
               <div
                 key={idx}
-                className="group relative p-8 rounded-2xl bg-clinical-surface hover:bg-white border border-clinical-border hover:border-brand-300 transition-all duration-300 shadow-subtle hover:shadow-premium flex flex-col justify-between"
+                className="group relative flex min-h-[290px] flex-col justify-between border border-clinical-border bg-clinical-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-premium sm:p-8"
               >
+                {/* Icon */}
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
-                    <Icon className="w-6 h-6" />
+                  <div className="mb-7 flex h-11 w-11 items-center justify-center rounded-xl border border-brand-100 bg-brand-50 text-brand-600 transition-all duration-300 group-hover:border-brand-200 group-hover:bg-brand-500 group-hover:text-white">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-serif text-lg font-medium text-clinical-dark mb-3">
+
+                  <h3 className="font-serif text-xl font-normal leading-tight text-clinical-dark">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-clinical-slate leading-relaxed">
+
+                  <p className="mt-3 text-sm leading-6 text-clinical-slate">
                     {pillar.description}
                   </p>
                 </div>
-                
-                <div className="pt-6 mt-6 border-t border-clinical-border/60 flex items-center justify-between text-xs text-brand-700 font-semibold uppercase tracking-wider">
-                  <span>Pillar 0{idx + 1}</span>
-                  <div className="w-6 h-[1px] bg-brand-300 group-hover:w-10 transition-all duration-300" />
+
+                {/* Bottom Detail */}
+                <div className="mt-8 flex items-center justify-between border-t border-clinical-border/70 pt-5">
+                  <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-brand-700">
+                    Pillar 0{idx + 1}
+                  </span>
+
+                  <div className="h-px w-6 bg-brand-300 transition-all duration-300 group-hover:w-10" />
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

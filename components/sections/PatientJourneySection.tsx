@@ -6,80 +6,96 @@ export default function PatientJourneySection() {
   const steps = CLINIC_CONFIG.patientJourney;
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        
-        {/* Section Heading */}
-        <div className="max-w-2xl mb-16">
-          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-brand-600 block mb-3">
-            The Clinical Protocol
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinical-dark">
+    <section className="relative overflow-hidden bg-white py-24 sm:py-28">
+      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10">
+
+        {/* Header */}
+        <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-brand-500" />
+
+            <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-600 sm:text-xs">
+              The Clinical Protocol
+            </span>
+
+            <span className="h-px w-8 bg-brand-500" />
+          </div>
+
+          <h2 className="font-serif text-3xl font-medium leading-tight tracking-tight text-clinical-dark sm:text-4xl lg:text-[3.15rem]">
             Your Structured Patient Pathway
           </h2>
-          <p className="mt-4 text-clinical-slate text-base leading-relaxed">
-            From your very first conversation to long-term barrier maintenance, experience a serene, structured journey prioritized around comfort, safety, and natural elegance.
+
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-clinical-slate sm:text-base">
+            From your very first conversation to long-term barrier maintenance,
+            experience a serene, structured journey prioritized around comfort,
+            safety, and natural elegance.
           </p>
         </div>
 
-        {/* Desktop Horizontal Storyline / Mobile Vertical Timeline */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 relative">
-          
-          {/* Prominent Connecting Line for Desktop */}
-          <div 
-            className="hidden lg:block absolute top-14 left-12 right-12 h-[3px] bg-brand-300 z-0" 
+        {/* Journey */}
+        <div className="relative">
+
+          {/* Desktop Connector */}
+          <div
+            className="absolute left-[10%] right-[10%] top-7 hidden h-px bg-brand-200 lg:block"
             aria-hidden="true"
           />
 
-          {steps.map((item, idx) => (
-            <div
-              key={idx}
-              className="relative z-10 p-6 rounded-2xl bg-clinical-surface border border-clinical-border hover:border-brand-300 hover:bg-white transition-all duration-300 shadow-subtle flex flex-col justify-between group"
-            >
-              <div>
-                {/* Step Pill - Enhanced prominence & contrast */}
-                <div className="w-14 h-14 rounded-full bg-white border-2 border-brand-500 text-brand-700 flex items-center justify-center font-serif text-lg font-bold mb-6 shadow-sm group-hover:scale-105 group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-5">
+            {steps.map((item, idx) => (
+              <div
+                key={idx}
+                className="group relative"
+              >
+                {/* Step Number */}
+                <div className="relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-brand-300 bg-white font-serif text-lg font-medium text-brand-700 shadow-sm transition-all duration-300 group-hover:border-brand-500 group-hover:bg-brand-500 group-hover:text-white">
                   {item.step}
                 </div>
 
-                <span className="text-xs uppercase tracking-wider font-semibold text-brand-700 block mb-1">
-                  {item.subtitle}
-                </span>
+                {/* Content */}
+                <div className="border-t border-clinical-border pt-5 lg:min-h-[220px]">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-600">
+                    {item.subtitle}
+                  </span>
 
-                <h3 className="font-serif text-lg font-medium text-clinical-dark mb-3">
-                  {item.title}
-                </h3>
+                  <h3 className="mt-2 font-serif text-lg font-medium leading-snug text-clinical-dark">
+                    {item.title}
+                  </h3>
 
-                <p className="text-sm text-clinical-slate leading-relaxed font-normal">
-                  {item.description}
-                </p>
+                  <p className="mt-3 text-sm leading-6 text-clinical-slate">
+                    {item.description}
+                  </p>
+
+                  {/* Duration */}
+                  <div className="mt-5 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-clinical-muted">
+                    <CheckCircle className="h-3.5 w-3.5 text-brand-500" />
+                    <span>{item.duration}</span>
+                  </div>
+                </div>
               </div>
-
-              {/* Duration Tag */}
-              <div className="mt-6 pt-4 border-t border-clinical-border/80 flex items-center justify-between text-xs text-clinical-slate">
-                <span className="font-semibold text-brand-700">{item.duration}</span>
-                <CheckCircle className="w-4 h-4 text-brand-500" />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Consultation Callout */}
-        <div className="mt-16 p-8 rounded-2xl bg-brand-50/60 border border-brand-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="max-w-xl text-center sm:text-left">
-            <h3 className="font-serif text-xl font-medium text-clinical-dark">
+        <div className="mt-16 flex flex-col gap-6 border-y border-brand-200 bg-brand-50/40 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <div className="max-w-xl">
+            <h3 className="font-serif text-xl font-medium text-clinical-dark sm:text-2xl">
               Begin With an In-Depth Clinical Assessment
             </h3>
-            <p className="text-xs sm:text-sm text-clinical-slate mt-1">
-              No pressure. Thorough diagnostic conversation tailored exclusively to your skin goals.
+
+            <p className="mt-2 text-xs leading-6 text-clinical-slate sm:text-sm">
+              No pressure. A thorough diagnostic conversation tailored
+              exclusively to your skin goals.
             </p>
           </div>
+
           <Link
             href="/book-appointment"
-            className="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs uppercase tracking-wider whitespace-nowrap transition-all shadow-sm hover:shadow-md hover:shadow-brand-500/20 active:scale-95 flex items-center gap-2"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition-all duration-300 hover:bg-brand-600 hover:shadow-md hover:shadow-brand-500/20 active:scale-[0.98]"
           >
             <span>Book Assessment</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
 

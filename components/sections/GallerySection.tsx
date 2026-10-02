@@ -7,34 +7,52 @@ import { Maximize2, X, Sparkles } from "lucide-react";
 
 export default function GallerySection() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [activeLightboxItem, setActiveLightboxItem] = useState<GalleryItem | null>(null);
+  const [activeLightboxItem, setActiveLightboxItem] =
+    useState<GalleryItem | null>(null);
 
-  const categories = ["All", "Clinic", "Consultation", "Treatment Environment", "Skincare", "Lifestyle"];
+  const categories = [
+    "All",
+    "Clinic",
+    "Consultation",
+    "Treatment Environment",
+    "Skincare",
+    "Lifestyle",
+  ];
 
-  const filteredItems = activeCategory === "All"
-    ? GALLERY_DATA
-    : GALLERY_DATA.filter((item) => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "All"
+      ? GALLERY_DATA
+      : GALLERY_DATA.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="gallery">
+    <section
+      className="py-24 bg-white relative overflow-hidden"
+      id="gallery"
+    >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        
+
         {/* Section Heading & Category Filters */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+
+          {/* Heading */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold tracking-widest uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5 text-brand-500" />
               <span>Sanctuary & Environment</span>
             </div>
+
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinical-dark">
               Inside BIBI JAN Aesthetic
             </h2>
+
             <p className="mt-3 text-base text-clinical-slate max-w-xl">
-              Immerse yourself in our serene medical sanctuary, state-of-the-art diagnostic suites, and restorative treatment spaces.
+              Immerse yourself in our serene medical sanctuary,
+              state-of-the-art diagnostic suites, and restorative
+              treatment spaces.
             </p>
           </div>
 
-          {/* Filter Tabs */}
+          {/* Category Filters */}
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
@@ -53,7 +71,7 @@ export default function GallerySection() {
           </div>
         </div>
 
-        {/* Masonry / Dynamic Editorial Grid */}
+        {/* Uniform Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div
@@ -61,6 +79,7 @@ export default function GallerySection() {
               onClick={() => setActiveLightboxItem(item)}
               className="group relative rounded-2xl overflow-hidden bg-slate-100 cursor-pointer shadow-subtle hover:shadow-premium transition-all duration-300 h-80"
             >
+              {/* Image */}
               <Image
                 src={item.image}
                 alt={item.title}
@@ -68,15 +87,20 @@ export default function GallerySection() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-clinical-dark/80 via-clinical-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white" />
-              
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-clinical-dark/80 via-clinical-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Image Information */}
               <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 text-white z-10">
                 <span className="text-xs uppercase tracking-widest text-brand-300 font-semibold block mb-1">
                   {item.category}
                 </span>
+
                 <h3 className="font-serif text-lg font-medium leading-snug">
                   {item.title}
                 </h3>
+
                 <p className="text-xs text-slate-300 mt-1 line-clamp-2">
                   {item.description}
                 </p>
@@ -89,7 +113,6 @@ export default function GallerySection() {
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Lightbox Modal */}
@@ -102,6 +125,7 @@ export default function GallerySection() {
             className="relative max-w-4xl w-full bg-clinical-dark rounded-2xl overflow-hidden border border-white/20 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Button */}
             <button
               type="button"
               onClick={() => setActiveLightboxItem(null)}
@@ -111,6 +135,7 @@ export default function GallerySection() {
               <X className="w-5 h-5" />
             </button>
 
+            {/* Large Image */}
             <div className="relative w-full h-[360px] sm:h-[500px]">
               <Image
                 src={activeLightboxItem.image}
@@ -121,13 +146,16 @@ export default function GallerySection() {
               />
             </div>
 
+            {/* Lightbox Information */}
             <div className="p-6 bg-clinical-onyx text-white">
               <span className="text-xs uppercase tracking-widest text-brand-400 font-semibold block">
                 {activeLightboxItem.category}
               </span>
+
               <h3 className="font-serif text-xl font-medium mt-1">
                 {activeLightboxItem.title}
               </h3>
+
               <p className="text-sm text-slate-300 mt-2">
                 {activeLightboxItem.description}
               </p>
